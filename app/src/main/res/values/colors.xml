@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="darkBlue">#24283E</color>
+    <color name="lightBlue">#33C4FF</color>
+    <color name="lightestBlue">#AEC4D8</color>
+
+    <color name="pink">#B63C6F</color>
+    <color name="darkPink">#752551</color>
+    <color name="lightPink">#EB5486</color>
+
+    <color name="olive">#3E4532</color>
+    <color name="olive_light">#616B50</color>
+    <color name="golden">#E8E19C</color>
+
+    <color name="metroBlue">#0000FF</color>
+    <color name="metroBlueBranch">#000080</color>
+    <color name="metroMagenta">#FF00FF</color>
+    <color name="metroYellow">#FFFF00</color>
+    <color name="metroRed">#FF0000</color>
+    <color name="metroGreen">#7CFC00</color>
+    <color name="metroGreenBranch">#32CD32</color>
+    <color name="metroViolet">#9B26B6</color>
+    <color name="metroPink">#FFC0CB</color>
+    <color name="metroPinkBranch">#E75480</color>
+    <color name="metroOrange">#FFA500</color>
+    <color name="metroAqua">#00FFFF</color>
+    <color name="metroGrey">#808080</color>
+    <color name="metroRapid">#000000</color>
+
+    <color name="orange200">#FC8F32</color>
+
+</resources>

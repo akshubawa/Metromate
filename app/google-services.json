@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "869798217503",
+    "project_id": "metromate---amigos",
+    "storage_bucket": "metromate---amigos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869798217503:android:347548a6c652ebfb4bd22a",
+        "android_client_info": {
+          "package_name": "com.example.amigos.metromate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869798217503-foe9p1egnd2ornapjv6dqc5uqnk8r0cr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfER8RQYJ8PYrMQ7RxE_w4oZ6vRe3EHYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869798217503-foe9p1egnd2ornapjv6dqc5uqnk8r0cr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
