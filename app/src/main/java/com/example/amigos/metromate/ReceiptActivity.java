@@ -70,7 +70,7 @@ public class ReceiptActivity extends AppCompatActivity {
         receipt_journey.setText("Journey: "+source+" to "+destination);
         receipt_fare.setText("Fare: "+fare2+" Rupees");
 
-        BookingsObject bookingsObject = new BookingsObject(source, destination, fare2, dateString, timeString);
+        BookingsObject bookingsObject = new BookingsObject(source, destination, fare2, timeString, dateString);
         String key = databaseReference.push().getKey();
         databaseReference.child(key).setValue(bookingsObject);
 

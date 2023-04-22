@@ -1,5 +1,6 @@
 package com.example.amigos.metromate;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,58 +8,67 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyAccountFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MyAccountFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private TextView display_name;
+    private Button wallet_button;
+    private Button signout_button;
+    private Button myBookings_button;
     public MyAccountFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MyAccountFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MyAccountFragment newInstance(String param1, String param2) {
-        MyAccountFragment fragment = new MyAccountFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_account, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_my_account, container, false);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
+        display_name = view.findViewById(R.id.display_name);
+        String display_fullName = user.getDisplayName();
+        display_fullName = display_fullName.toUpperCase();
+        display_name.setText(display_fullName);
+
+        wallet_button = view.findViewById(R.id.wallet_button);
+        wallet_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addMoneyIntent = new Intent(getContext(), WalletActivity.class);
+                startActivity(addMoneyIntent);
+            }
+        });
+
+        myBookings_button = view.findViewById(R.id.myBookings_button);
+        myBookings_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BookingsFragment bookingsFragment = new BookingsFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,bookingsFragment).commit();
+
+                bottomNavigationView.setSelectedItemId(R.id.nav_bookings);
+            }
+        });
+
+        signout_button = view.findViewById(R.id.signout_button);
+        signout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(),LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        return view;
     }
+
 }

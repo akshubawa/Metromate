@@ -46,6 +46,10 @@ public class BookingsFragment extends Fragment {
         usersBookings = new ArrayList<>();
         bookingsRecyclerView = view.findViewById(R.id.bookingsRecyclerView);
 
+        // Set the adapter and layout manager for the RecyclerView here
+        bookingsRecyclerView.setAdapter(new BookingsPostAdapter(usersBookings));
+        bookingsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -59,8 +63,8 @@ public class BookingsFragment extends Fragment {
                     }
                 }
 
-                bookingsRecyclerView.setAdapter(new BookingsPostAdapter(usersBookings));
-                bookingsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                // Update the adapter with the new data
+                bookingsRecyclerView.getAdapter().notifyDataSetChanged();
             }
 
             @Override
@@ -71,3 +75,4 @@ public class BookingsFragment extends Fragment {
 
     }
 }
+

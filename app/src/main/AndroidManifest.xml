@@ -12,6 +12,15 @@
         android:theme="@style/Theme.MetroMate"
         tools:targetApi="31">
         <activity
+            android:name=".LoadingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AddMoneyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WalletActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReceiptActivity"
             android:exported="false" />
         <activity

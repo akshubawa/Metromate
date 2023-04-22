@@ -30,11 +30,10 @@ public class BookingsPostAdapter extends RecyclerView.Adapter<BookingsPostAdapte
         BookingsObject bookingsObject = bookingsObjectArrayList.get(position);
         //Log.d("RidePostAdaptor", "onBindViewHolder: " + bookingsObject.getSource());
         holder.card_date.setText(bookingsObject.getDate().toString());
-        holder.card_time.setText(bookingsObject.getTime().toString());
+        holder.card_time.setText("TIME: "+bookingsObject.getTime().toString());
         holder.card_source.setText("SOURCE: "+bookingsObject.getSource());
         holder.card_destination.setText("DESTINATION: "+bookingsObject.getDestination());
         holder.card_fare.setText("FARE: ₹"+bookingsObject.getFare());
-
     }
 
     @Override

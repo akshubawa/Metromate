@@ -2,17 +2,19 @@ package com.example.amigos.metromate;
 
 public class User {
     private String name;
-    private String gender;
     private String email;
     private String phone;
+    private double balance;
+
 
     public User() {
     }
 
-    public User(String name, String email, String phone) {
+    public User(String name, String email, String phone, double balance) {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.balance = balance;
     }
 
     // Getters and setters for the fields
@@ -40,4 +42,11 @@ public class User {
         this.phone = phone;
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }

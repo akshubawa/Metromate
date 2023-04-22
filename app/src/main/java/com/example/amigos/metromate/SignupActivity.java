@@ -74,11 +74,13 @@ public class SignupActivity extends AppCompatActivity {
 
         signup_button.setOnClickListener(v -> {
             String name, email, phone, password, confirm_password;
-            name = signup_fullName.getEditText().getText().toString();
-            email = signup_email.getEditText().getText().toString();
-            phone =signup_phoneN.getEditText().getText().toString();
+            double balance;
+            name = signup_fullName.getEditText().getText().toString().trim();
+            email = signup_email.getEditText().getText().toString().trim();
+            phone =signup_phoneN.getEditText().getText().toString().trim();
             password = signup_password.getEditText().getText().toString();
-            confirm_password = signup_password.getEditText().getText().toString();
+            confirm_password = signup_confirm_password.getEditText().getText().toString();
+            balance = 99;
 
             if (TextUtils.isEmpty(name)) {
                 Toast.makeText(SignupActivity.this, "Please Provide Name", Toast.LENGTH_SHORT).show();
@@ -109,35 +111,38 @@ public class SignupActivity extends AppCompatActivity {
                 return;
             }
 
-            mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                String uid = user.getUid();
+            else {
 
-                                User signup = new User(name, email, phone);
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    String uid = user.getUid();
 
-                                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                DatabaseReference usersRef = database.getReference("users").child(user.getUid());
+                                    User signup = new User(name, email, phone, balance);
 
-                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                        .setDisplayName(name).build();
+                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                    DatabaseReference usersRef = database.getReference("users").child(user.getUid());
 
-                                user.updateProfile(profileUpdates);
+                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                            .setDisplayName(name).build();
 
-                                usersRef.setValue(signup);
+                                    user.updateProfile(profileUpdates);
 
-                                Toast.makeText(SignupActivity.this, "Successfully Registered.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                                startActivity(intent);
-                                finish();
-                            } else {
-                                Toast.makeText(SignupActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
+                                    usersRef.setValue(signup);
+
+                                    Toast.makeText(SignupActivity.this, "Successfully Registered.", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(SignupActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
+                        });
+            }
         });
     }
 

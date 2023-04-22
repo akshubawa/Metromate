@@ -3,15 +3,13 @@ package com.example.amigos.metromate;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.io.Serializable;
-
 public class BookingsObject {
 
     private String source;
     private String destination;
     private int fare;
-    private Serializable time;
-    private Serializable date;
+    private String time;
+    private String date;
 
     private String id;
     FirebaseUser user;
@@ -19,7 +17,7 @@ public class BookingsObject {
     public BookingsObject() {
     }
 
-    public BookingsObject(String source, String destination, int fare, Serializable time, Serializable date) {
+    public BookingsObject(String source, String destination, int fare, String time, String date) {
         this.source = source;
         this.destination = destination;
         this.fare = fare;
@@ -55,19 +53,19 @@ public class BookingsObject {
         this.fare = fare;
     }
 
-    public Serializable getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Serializable time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public Serializable getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Serializable date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

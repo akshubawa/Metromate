@@ -64,8 +64,8 @@ public class LoginActivity extends AppCompatActivity {
         });
         login_button.setOnClickListener(v -> {
             String email,password;
-            email = login_email.getEditText().getText().toString();
-            password = login_password.getEditText().getText().toString();
+            email = login_email.getEditText().getText().toString().trim();
+            password = login_password.getEditText().getText().toString().trim();
 
             if (TextUtils.isEmpty(email)) {
                 Toast.makeText(LoginActivity.this, "Please Provide Email", Toast.LENGTH_SHORT).show();
