@@ -2,4 +2,11 @@
     <string name="app_name">MetroMate</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aboutUs1">Welcome to Metromate, your one-stop solution for Delhi Metro and Noida Metro routing, ticket booking, and more. Our team of dedicated developers at Amigos has created this app to provide you with a hassle-free and convenient experience while traveling on the metro.</string>
+    <string name="aboutUs2">We understand the importance of having a reliable and efficient mode of transportation, which is why we have created Metromate. With our app, you can easily plan your route, book your tickets, and even top up your wallet for a seamless journey.</string>
+    <string name="aboutUs3">Our team is committed to providing you with the best customer support possible. We are always here to assist you with any queries or issues you may have, and we take pride in resolving them promptly.</string>
+    <string name="aboutUs4">At Metromate, we value your time and money, which is why we offer wallet facilities for faster and secure transactions. Additionally, we are continuously working to improve our app and add more features to make your journey even better.</string>
+    <string name="aboutUs5">Thank you for choosing Metromate, and we hope you enjoy your experience with us.</string>
+
+    <string name="recharge_email">https://www.dmrcsmartcard.com/Citrus_Payment/QuickTopUp.aspx</string>
 </resources>

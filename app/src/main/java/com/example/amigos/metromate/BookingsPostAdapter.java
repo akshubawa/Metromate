@@ -1,6 +1,5 @@
 package com.example.amigos.metromate;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -28,9 +27,8 @@ public class BookingsPostAdapter extends RecyclerView.Adapter<BookingsPostAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         BookingsObject bookingsObject = bookingsObjectArrayList.get(position);
-        //Log.d("RidePostAdaptor", "onBindViewHolder: " + bookingsObject.getSource());
-        holder.card_date.setText(bookingsObject.getDate().toString());
-        holder.card_time.setText("TIME: "+bookingsObject.getTime().toString());
+        holder.card_date.setText(bookingsObject.getDate());
+        holder.card_time.setText("TIME: "+bookingsObject.getTime());
         holder.card_source.setText("SOURCE: "+bookingsObject.getSource());
         holder.card_destination.setText("DESTINATION: "+bookingsObject.getDestination());
         holder.card_fare.setText("FARE: ₹"+bookingsObject.getFare());

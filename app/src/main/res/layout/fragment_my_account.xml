@@ -48,7 +48,6 @@
                 android:paddingBottom="20dp"
                 android:textAlignment="textStart"
                 android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-                android:backgroundTint="@color/white"
                 android:textSize="18dp"
                 android:textColor="@color/black"
                 android:text="WALLET" />
@@ -61,10 +60,21 @@
                 android:paddingBottom="20dp"
                 android:textAlignment="textStart"
                 android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:text="MY BOOKINGS" />
+
+            <Button
+                android:id="@+id/recharge_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textAlignment="textStart"
+                android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:text="METRO RECHARGE" />
 
             <Button
                 android:id="@+id/callSupport_button"
@@ -74,7 +84,6 @@
                 android:paddingBottom="20dp"
                 android:textAlignment="textStart"
                 android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:text="CALL SUPPORT" />
@@ -87,7 +96,6 @@
                 android:paddingBottom="20dp"
                 android:textAlignment="textStart"
                 android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:text="FEEDBACK" />
@@ -100,7 +108,6 @@
                 android:paddingBottom="20dp"
                 android:textAlignment="textStart"
                 android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-                android:backgroundTint="@color/white"
                 android:textSize="18dp"
                 android:textColor="@color/black"
                 android:text="About Us" />
@@ -113,7 +120,6 @@
                 android:paddingBottom="20dp"
                 android:textAlignment="textStart"
                 android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-                android:backgroundTint="@color/white"
                 android:textSize="18dp"
                 android:textColor="@color/black"
                 android:text="Sign Out" />

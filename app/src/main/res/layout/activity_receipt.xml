@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".ReceiptActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -83,8 +82,7 @@
                 android:textAlignment="center"
                 android:textStyle="bold"
                 android:drawablePadding="8dp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
+                android:padding="8dp"/>
 
             <TextView
                 android:id="@+id/receipt_journey"
@@ -95,8 +93,7 @@
                 android:textAlignment="center"
                 android:textStyle="bold"
                 android:drawablePadding="8dp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
+                android:padding="8dp"/>
             <TextView
                 android:id="@+id/receipt_date"
                 android:layout_width="match_parent"
@@ -106,8 +103,7 @@
                 android:text="Date : "
                 android:drawablePadding="8dp"
                 android:textStyle="bold"
-                android:padding="8dp"
-                android:textColor="@color/black" />
+                android:padding="8dp"/>
 
             <TextView
                 android:id="@+id/receipt_time"
@@ -118,8 +114,7 @@
                 android:textAlignment="center"
                 android:textStyle="bold"
                 android:drawablePadding="8dp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
+                android:padding="8dp"/>
             <TextView
                 android:id="@+id/receipt_fare"
                 android:layout_width="match_parent"
@@ -129,8 +124,7 @@
                 android:textAlignment="center"
                 android:textStyle="bold"
                 android:drawablePadding="8dp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
+                android:padding="8dp"/>
 
             <Button
                 android:id="@+id/receipt_download"
@@ -139,7 +133,6 @@
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/orange200"
                 android:text="BOOK ANOTHER TICKET"
-                android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 

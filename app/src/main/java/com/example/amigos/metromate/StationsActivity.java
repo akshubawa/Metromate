@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -97,6 +98,8 @@ public class StationsActivity extends AppCompatActivity {
         int final_time = (int) Math.ceil(Double.parseDouble(time));
         int interchange_length = interchange.size();
 
+        Log.e("path", String.valueOf(path));
+
         String first_station = path.get(0);
         String first_line = line1.get(0);
 
@@ -153,28 +156,13 @@ public class StationsActivity extends AppCompatActivity {
 
         stations_interchange.setText(String.valueOf(interchange_length));
         stations_time.setText(String.valueOf(final_time));
-        stations_fare.setText("₹"+String.valueOf(fare));
+        stations_fare.setText("₹"+fare);
         stations_path_number.setText(String.valueOf(pathValue));
-
-        /*Checkout.preload(getApplicationContext());
-        checkout.setKeyID("rzp_test_HAgUqUnW8vmvXm");*/
-
 
         stations_proceed_button = findViewById(R.id.stations_proceed_button);
         stations_proceed_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-               /* BookingsObject bookingsObject = new BookingsObject(time,time, fare, source, destination);
-                String key = databaseReference.push().getKey();
-                databaseReference.child(key).setValue(bookingsObject);
-
-                *//*card_date.setText("");
-                card_time.setText("");
-                card_source.setText("");
-                card_destination.setText("");
-                card_fare.setText("");*//*
-                Toast.makeText(StationsActivity.this, "Ticket Booked Successfully", Toast.LENGTH_SHORT).show();*/
 
                 Intent intent = new Intent(StationsActivity.this, ReceiptActivity.class);
 
@@ -189,20 +177,10 @@ public class StationsActivity extends AppCompatActivity {
                 Date currentDate = new Date();
                 intent.putExtra("currentDate",currentDate);
 
+
+
                 startActivity(intent);
             }
         });
-
-
-
-  /*stations_back_button = findViewById(R.id.stations_back_button);
-        stations_back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StationsActivity.this, BookingActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
     }
 }

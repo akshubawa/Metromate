@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class AddMoneyActivity extends AppCompatActivity {
     private TextInputLayout addMoney_amount;
     private Button addedMoney_button;
-    private int balance_added;
+    private int balance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +27,15 @@ public class AddMoneyActivity extends AppCompatActivity {
 
         Intent wallet_add = getIntent();
         if (wallet_add.hasExtra("balance")) {
-            String balance_string = wallet_add.getStringExtra("balance");
-            if (balance_string != null) {
-                balance_added = Integer.parseInt(balance_string);
-            }
+            balance = wallet_add.getIntExtra("balance",0);
         }
-        else balance_added = 0;
         addedMoney_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String money = addMoney_amount.getEditText().getText().toString().trim();
-                Log.e("money: ", money);
-                int addedMoney = balance_added + Integer.parseInt(money);
-                Log.e( "addedMoney ", String.valueOf(addedMoney));
+                //Log.e("money: ", money);
+                int addedMoney = balance + Integer.parseInt(money);
+                //Log.e( "addedMoney ", String.valueOf(addedMoney));
                 if(TextUtils.isEmpty(money)) {
                     addMoney_amount.setError("Please enter a valid amount");
                     return;
@@ -48,6 +44,7 @@ public class AddMoneyActivity extends AppCompatActivity {
                 Intent walletIntent = new Intent(getApplicationContext(), WalletActivity.class);
                 walletIntent.putExtra("addedMoney",addedMoney);
                 startActivity(walletIntent);
+                finish();
             }
         });
 

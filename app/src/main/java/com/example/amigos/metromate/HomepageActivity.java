@@ -53,6 +53,11 @@ public class HomepageActivity extends AppCompatActivity {
 
     }
 
+    public BottomNavigationView getBottomNavigationView() {
+        return bnView;
+    }
+
+
     public void loadFrag(Fragment fragment, boolean flag) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

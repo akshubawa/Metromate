@@ -74,11 +74,6 @@ public class ReceiptActivity extends AppCompatActivity {
         String key = databaseReference.push().getKey();
         databaseReference.child(key).setValue(bookingsObject);
 
-                /*card_date.setText("");
-                card_time.setText("");
-                card_source.setText("");
-                card_destination.setText("");
-                card_fare.setText("");*/
         Toast.makeText(ReceiptActivity.this, "Ticket Booked Successfully", Toast.LENGTH_SHORT).show();
 
         receipt_download.setOnClickListener(new View.OnClickListener() {
