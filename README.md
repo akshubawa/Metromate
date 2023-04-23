@@ -10,7 +10,7 @@ This is an Android app developed for the people of Delhi and Noida to find best 
 
 - User can register and login to the app using their email ID and password.
 - User can look up best routes of metro.
-- User can access thhe map of Delhi Metro.
+- User can access the map of Delhi Metro.
 - User can recharge Metro Tickets.
 - User can book Metro Ticket (Conceptual).
 - User will receive alarm before 1 minute reaching to his/her station.
@@ -42,4 +42,4 @@ Note: Make sure your Android device is running version 10 or above.
 
 ## Contributors
 
-This project was developed by Akshay Negi & Aditi Chaturvedi as part of Team Amigos for Semester Java Projct.
+This project was developed by Akshay Negi & Aditi Chaturvedi as part of Team Amigos for Semester Java Project.
