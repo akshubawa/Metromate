@@ -4,7 +4,7 @@ This is an Android app developed for the people of Delhi and Noida to find best 
 
 ## Screenshots
 
-![](https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Homepage_Image.jpg) | 
+![](https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Homepage_Image.jpg width="150" height="280") | 
 ![](https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/MyBookings_Image.jpg) | ![](https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Map_Image.jpg) | 
 ![](https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/MyAccount_Image.jpg) | 
 ![](https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Stations_Image.jpg) | 
