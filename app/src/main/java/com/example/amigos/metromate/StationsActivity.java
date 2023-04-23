@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,15 +30,14 @@ public class StationsActivity extends AppCompatActivity {
 
     ArrayList<CardModel> arrCard = new ArrayList<CardModel>();
     RecyclerView route_recycler;
-
-    private Button stations_back_button;
+    static final int ALARM_REQ_CODE = 100;
     private TextView stations_interchange;
     private TextView stations_time;
     private TextView stations_fare;
     private TextView stations_journey;
     private TextView stations_path_number;
     private Button stations_proceed_button;
-    /*DatabaseReference databaseReference, userDatabaseReference;*/
+
 
     private int randomNum;
 
@@ -160,6 +161,7 @@ public class StationsActivity extends AppCompatActivity {
         stations_path_number.setText(String.valueOf(pathValue));
 
         stations_proceed_button = findViewById(R.id.stations_proceed_button);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         stations_proceed_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -177,7 +179,14 @@ public class StationsActivity extends AppCompatActivity {
                 Date currentDate = new Date();
                 intent.putExtra("currentDate",currentDate);
 
+                long time_milli = Long.parseLong(String.valueOf(final_time))*60*1000;
+                long alarm_early = 1*60*1000;
+                long triggerTime = System.currentTimeMillis() + time_milli - alarm_early;
 
+                Intent iBroadcast = new Intent(StationsActivity.this, MyReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(StationsActivity.this,ALARM_REQ_CODE, iBroadcast, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                alarmManager.set(AlarmManager.RTC_WAKEUP,triggerTime, pendingIntent);
 
                 startActivity(intent);
             }
