@@ -14,6 +14,7 @@ This is an Android app developed for the people of Delhi and Noida to find best 
 - User can access thhe map of Delhi Metro.
 - User can recharge Metro Tickets.
 - User can book Metro Ticket (Conceptual).
+- User will receive alarm before 1 minute reaching to his/her station.
 
 ## Installation
 
