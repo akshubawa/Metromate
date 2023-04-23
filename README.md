@@ -4,7 +4,7 @@ This is an Android app developed for the people of Delhi and Noida to find best 
 
 ## Screenshots
 
-<img src="app/src/main/assets/trainsss.png" alt="My cool logo"/>
+<img src="Metromate-Advanced/app/src/main/assets/trainss.png" alt="My cool logo"/>
 
 ## Features
 
