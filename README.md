@@ -5,12 +5,12 @@ This is an Android app developed for the people of Delhi and Noida to find best 
 ## Screenshots
 
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Homepage_Image.jpg" width="180" height="360">
-  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/MyBookings_Image.jpg" width="180" height="360">
-  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Map_Image.jpg" width="180" height="360">
-  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/MyAccount_Image.jpg" width="180" height="360">
-  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Stations_Image.jpg" width="180" height="360">
-  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Receipt_Image.jpg" width="180" height="360">
+  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Homepage_Image.jpg" width="160" height="320">
+  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/MyBookings_Image.jpg" width="160" height="320">
+  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Map_Image.jpg" width="160" height="320">
+  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/MyAccount_Image.jpg" width="160" height="320">
+  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Stations_Image.jpg" width="160" height="320">
+  <img src="https://github.com/akshubawa/Metromate-Advanced/blob/master/app/src/main/assets/Receipt_Image.jpg" width="160" height="320">
 </div>
 
 ## Features
