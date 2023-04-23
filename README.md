@@ -4,7 +4,7 @@ This is an Android app developed for the people of Delhi and Noida to find best 
 
 ## Screenshots
 
-| ![Train](trainss.png) |
+| ![Train](app/src/main/assets/trainss.png) |
 |:-----:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|
 
 ## Features
