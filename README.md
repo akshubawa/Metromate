@@ -4,7 +4,7 @@ This is an Android app developed for the people of Delhi and Noida to find best 
 
 ## Screenshots
 
-| ![](app/src/main/assets/Screenshot_20230420-081244.png) | ![](app/src/main/assets/Screenshot_20230420-081249.png) | ![](app/src/main/assets/Screenshot_20230420-081253.png) | ![](app/src/main/assets/Screenshot_20230420-081302.png) |
+| ![](app/src/main/assets/Homepage_Image.jpg) | ![](app/src/main/assets/MyBookings_Image.jpg) | ![](app/src/main/assets/Map_Image.jpg) | ![](app/src/main/assets/MyAccount_Image.jpg) | ![](app/src/main/assets/Stations_Image.jpg) | ![](app/src/main/assets/Receipt_Image.jpg) |
 |:-----:|:-------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|
 
 ## Features
