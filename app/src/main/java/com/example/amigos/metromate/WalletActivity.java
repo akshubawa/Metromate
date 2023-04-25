@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class WalletActivity extends AppCompatActivity {
-    private int balance = 100;
+    private int balance = 0;
     private int received_balance = 0;
     private TextView wallet_textview;
     private Button addMoney_button;

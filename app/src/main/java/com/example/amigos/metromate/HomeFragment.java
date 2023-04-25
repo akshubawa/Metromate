@@ -18,11 +18,15 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,11 +55,20 @@ public class HomeFragment extends Fragment {
 
         offersRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("Announcements");
+
+        ref.setValue(null);
+
         arrOffers.add(new OffersCardModel("AQUA LINE","Fast Trains will not stop at stations: Sector 144, Sector 145, Sector 146 and Sector 147."));
         arrOffers.add(new OffersCardModel("FAST TRAINS","Fast Trains will not be available on weekends and national holidays."));
         arrOffers.add(new OffersCardModel("BYOB","Kindly practice the habit of Bring your own Bag for eco-friendly Shopping."));
         arrOffers.add(new OffersCardModel("BEWARE OF POCKET-PICKERS","Keep your belongings safe and secured and be alert."));
         arrOffers.add(new OffersCardModel("METRO-HOURS","Metro services are active from 06:00 to 22:00 IST."));
+
+        for (OffersCardModel offer : arrOffers) {
+            ref.push().setValue(offer);
+        }
 
         OffersAdaptor adapter = new OffersAdaptor(getContext(), arrOffers);
         offersRecycler.setAdapter(adapter);

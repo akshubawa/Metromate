@@ -33,7 +33,7 @@ public class ReceiptActivity extends AppCompatActivity {
     private TextView receipt_time;
     private TextView receipt_fare;
     private Button receipt_download;
-    DatabaseReference databaseReference, userDatabaseReference;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

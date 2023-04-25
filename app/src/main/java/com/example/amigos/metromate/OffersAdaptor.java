@@ -31,8 +31,8 @@ public class OffersAdaptor extends RecyclerView.Adapter<OffersAdaptor.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.offers_post.setText(arrOffers.get(position).offer);
-        holder.offers_heading.setText(arrOffers.get(position).heading);
+        holder.offers_post.setText(arrOffers.get(position).getOffer());
+        holder.offers_heading.setText(arrOffers.get(position).getHeading());
 
     }
 

@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".ReceiptActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -68,7 +67,6 @@
                 android:layout_height="wrap_content"
                 android:text="Total Wallet Balance:"
                 android:layout_marginTop="50sp"
-                android:textColor="@color/olive"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -79,9 +77,8 @@
                 android:layout_marginTop="15sp"
                 android:background="@drawable/black_border"
                 android:paddingTop="20sp"
-                android:text="100"
+                android:text="0.0"
                 android:padding="20dp"
-                android:textColor="@color/olive"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:drawableLeft="@drawable/baseline_currency_rupee_24"

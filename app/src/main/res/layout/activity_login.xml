@@ -22,7 +22,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome!"
-            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -32,7 +31,6 @@
             android:text="Plan your Journey!!"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
             android:layout_marginBottom="30dp" />
 
         <TextView

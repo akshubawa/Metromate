@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".ReceiptActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -68,7 +67,6 @@
                 android:layout_height="wrap_content"
                 android:text="Enter Amount to add:"
                 android:layout_marginTop="50sp"
-                android:textColor="@color/olive"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -79,7 +77,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:hint="Amount"
-                android:textColorHint="@color/black"
                 android:transitionName="username_tran">
 
                 <com.google.android.material.textfield.TextInputEditText

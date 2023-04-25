@@ -20,13 +20,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class BookingsFragment extends Fragment {
 
     DatabaseReference databaseReference;
-    ArrayList<BookingsObject> usersBookings;
+    LinkedList<BookingsObject> usersBookings;
     RecyclerView bookingsRecyclerView;
 
+    private static final int MAX_SIZE = 10;
     public BookingsFragment() {
 
     }
@@ -43,7 +45,7 @@ public class BookingsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("BookingsPosts");
-        usersBookings = new ArrayList<>();
+        usersBookings = new LinkedList<>();
         bookingsRecyclerView = view.findViewById(R.id.bookingsRecyclerView);
 
         // Set the adapter and layout manager for the RecyclerView here
@@ -59,9 +61,11 @@ public class BookingsFragment extends Fragment {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     BookingsObject bookingsObject = dataSnapshot.getValue(BookingsObject.class);
                     if (bookingsObject.getId().equals(userId)) {
-                        usersBookings.add(bookingsObject);
+                        usersBookings.addFirst(bookingsObject);
                     }
                 }
+                if (usersBookings.size()>MAX_SIZE)
+                    usersBookings.removeLast();
 
                 // Update the adapter with the new data
                 bookingsRecyclerView.getAdapter().notifyDataSetChanged();

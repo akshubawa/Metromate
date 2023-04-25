@@ -3,8 +3,15 @@ package com.example.amigos.metromate;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
+import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -80,34 +87,46 @@ public class SignupActivity extends AppCompatActivity {
             phone =signup_phoneN.getEditText().getText().toString().trim();
             password = signup_password.getEditText().getText().toString();
             confirm_password = signup_confirm_password.getEditText().getText().toString();
-            balance = 99;
+            balance = 69;
 
             if (TextUtils.isEmpty(name)) {
-                Toast.makeText(SignupActivity.this, "Please Provide Name", Toast.LENGTH_SHORT).show();
+                signup_fullName.setError("Please provide Name");
                 return;
             }
 
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(SignupActivity.this, "Please Provide Email", Toast.LENGTH_SHORT).show();
+                signup_email.setError("Please provide Email");
                 return;
             }
 
             if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(SignupActivity.this, "Please Provide Mobile Number", Toast.LENGTH_SHORT).show();
+                signup_phoneN.setError("Please provide Mobile Number");
                 return;
             }
 
             if (TextUtils.isEmpty(password)) {
-                Toast.makeText(SignupActivity.this, "Please Provide Password", Toast.LENGTH_SHORT).show();
+                signup_password.setError("Please provide Password");
+                return;
+            }
+
+            if (TextUtils.isEmpty(confirm_password)) {
+                signup_confirm_password.setError("Please Confirm Password");
+                return;
+            }
+
+            else if (password.length() < 8) {
+                signup_password.setError("Password should be at least 8 characters long.");
                 return;
             }
 
             if (phone.length() != 10) {
                 Toast.makeText(this, "Phone number should be 10 digits.", Toast.LENGTH_SHORT).show();
+                return;
             }
 
             if (!password.equals(confirm_password)) {
-                Toast.makeText(SignupActivity.this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
+                signup_password.setError("Passwords do not match.");
+                signup_confirm_password.setError("Passwords do not match.");
                 return;
             }
 

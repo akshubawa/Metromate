@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Random;
@@ -56,8 +57,6 @@ public class StationsActivity extends AppCompatActivity {
         stations_journey = findViewById(R.id.stations_journey);
 
         route_recycler.setLayoutManager(new LinearLayoutManager(StationsActivity.this));
-
-        /*databaseReference = FirebaseDatabase.getInstance().getReference("RidePosts");*/
 
         RecyclerCardAdapter adapter = new RecyclerCardAdapter(StationsActivity.this, arrCard);
         route_recycler.setAdapter(adapter);
@@ -106,12 +105,14 @@ public class StationsActivity extends AppCompatActivity {
 
         ArrayList<String> lines = new ArrayList<String>();
         lines.addAll(line1);
+        Collections.reverse(line2);
         lines.addAll(line2);
+        //lines.addAll(line2);
 
         //REMOVING DUPLICATES FROM LINE1 & LINE2
-        Set<String> set = new LinkedHashSet<>(lines);
+      /*  Set<String> set = new LinkedHashSet<>(lines);
         lines.clear();
-        lines.addAll(set);
+        lines.addAll(set);*/
 
         //CAPITALIZING LINES (COLOR)
         for (int i = 0; i < lines.size(); i++) {
@@ -180,7 +181,7 @@ public class StationsActivity extends AppCompatActivity {
                 intent.putExtra("currentDate",currentDate);
 
                 long time_milli = Long.parseLong(String.valueOf(final_time))*60*1000;
-                long alarm_early = 1*60*1000;
+                long alarm_early = 2*60*1000;
                 long triggerTime = System.currentTimeMillis() + time_milli - alarm_early;
 
                 Intent iBroadcast = new Intent(StationsActivity.this, MyReceiver.class);

@@ -8,12 +8,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class BookingsPostAdapter extends RecyclerView.Adapter<BookingsPostAdapter.ViewHolder> {
 
-    private final ArrayList<BookingsObject> bookingsObjectArrayList;
+    private final LinkedList<BookingsObject> bookingsObjectArrayList;
 
-    public BookingsPostAdapter(ArrayList<BookingsObject> bookingsObjectArrayList) {
+    public BookingsPostAdapter(LinkedList<BookingsObject> bookingsObjectArrayList) {
         this.bookingsObjectArrayList = bookingsObjectArrayList;
     }
 

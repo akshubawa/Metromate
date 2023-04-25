@@ -1,8 +1,6 @@
 package com.example.amigos.metromate;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +16,12 @@ public class HomepageActivity extends AppCompatActivity {
 
     RelativeLayout container;
     BottomNavigationView bnView;
-    EditText booking_from, booking_to;
-    Button booking_proceed_button;
     DatabaseReference databaseReference;
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

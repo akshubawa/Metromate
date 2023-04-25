@@ -112,7 +112,7 @@
                 android:layout_marginTop="10dp"
                 android:hint="Confirm Password"
                 android:transitionName="username_tran"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
